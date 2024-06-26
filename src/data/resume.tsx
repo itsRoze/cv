@@ -46,7 +46,7 @@ export const RESUME = {
       start: "Apr 2024",
       end: "Jun 2024",
       description:
-        "Solving the loneliness epidemic through AI-powered social toolkit for locals to find community and friendship. Sole engineer designing mockups and building prototypes. Outside of engineering, as a cofounder, I put on many hats including fundraising, sales, and operations",
+        "Solving the loneliness epidemic through an AI-powered social toolkit for locals to find community and friendship. I am the sole engineer designing mockups and building prototypes. Outside of engineering, as a cofounder, I put on many hats including fundraising, sales, operations, and talking to users",
     },
     {
       company: "Codestache",
@@ -66,7 +66,7 @@ export const RESUME = {
       start: "Sep 2019",
       end: "Jul 2022",
       description:
-        "Led the infrastructure team developing a new app achieving ~20,000 lab orders monthly. Migrated code to React + scaled for ~250 million patient records exchanges per month. Redesigned the app UI to boost clinical training promoting an educational video on advanced features. This initiative resulted in the video becoming the company's fastest-growing educational resource.",
+        "I led the infrastructure team developing a new app achieving ~20,000 lab orders monthly. Migrated code to React + scaled for ~250 million patient records exchanges per month. Redesigned our app UI to boost clinical training promoting an educational video on advanced features; this initiative resulted in the video becoming the company's fastest-growing educational resource.",
     },
     {
       company: "Epic",
