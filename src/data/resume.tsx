@@ -11,7 +11,7 @@ export const RESUME = {
     "As a Full Stack Engineer, I excel in transforming product concepts into market-ready solutions, building scalable, user-friendly systems, and mentoring talented teams. My solo projects, including a SaaS product featured on Product Hunt, demonstrate my ability to identify market needs and deliver high-quality solutions. My work in machine learning was recognized with High Distinctions from UVA. I am currently exploring new opportunities to leverage my skills in a new venture.",
   avatarUrl:
     "https://media.licdn.com/dms/image/D4E03AQFVuFWdRAycEw/profile-displayphoto-shrink_800_800/0/1683078934283?e=1724889600&v=beta&t=6a8C4MaQmAtUzulDdqXhv4l39KJYbCbYpqPvUjrj2b4",
-  personalWebsiteUrl: "elijahlewis.dev",
+  personalWebsiteUrl: "https://www.roze.dev/",
   contact: {
     email: "hello@elijahlewis.dev",
     tel: "",
