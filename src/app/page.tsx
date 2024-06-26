@@ -1,19 +1,17 @@
-import { RESUME } from "@/data/resume";
-import { GlobeIcon, MailIcon } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Section } from "@/components/ui/section";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ProjectCard } from "@/components/project-card";
 import { CommandMenu } from "@/components/command-menu";
+import { Section } from "@/components/ui/section";
+import { GlobeIcon, MailIcon } from "lucide-react";
+import { ProjectCard } from "@/components/project-card";
+import { RESUME } from "@/data/resume";
 
-export default function HomePage() {
+export default function Page() {
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12">
-      <div className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4">
-        <section>
-          <Heading />
-        </section>
+    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
+      <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4">
+        <Heading />
         <Section>
           <h2 className="text-xl font-bold">About</h2>
           <p className="text-pretty font-mono text-sm text-muted-foreground print:text-[12px]">
@@ -24,7 +22,7 @@ export default function HomePage() {
         <Work />
         <Projects />
         <Skills />
-      </div>
+      </section>
 
       <CommandMenu
         links={[
@@ -72,6 +70,7 @@ const Heading = () => {
           {RESUME.contact.social.map((social) => (
             <a
               key={social.name}
+              target="_blank"
               href={social.url}
               className="transform duration-100 hover:-translate-y-1 hover:rotate-12"
             >
@@ -171,7 +170,7 @@ const Projects = () => {
   return (
     <Section className="print-force-new-page scroll-mb-16">
       <h2 className="text-xl font-bold">Projects</h2>
-      <div className="-mx-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 print:grid-cols-3 print:gap-2">
+      <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
         {RESUME.projects.map((project) => {
           return (
             <ProjectCard
