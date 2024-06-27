@@ -163,14 +163,14 @@ export const RESUME = {
         "Drizzle",
       ],
       description:
-        "Bookish is a semantic search engine that finds books based on the semantic meaning of your query. Typical AI apps make LLMs that UI, but I was interested in other ways of using LLMs to personalize content.",
+        "Bookish is a semantic search engine that finds books based on the semantic meaning of your query. Typical AI apps make LLMs the UI, but I was interested in other ways of using LLMs to personalize content.",
       link: "https://github.com/third-systems/book-search",
     },
     {
       title: "Dex",
       techStack: ["SoldJS", "Go", "Tailwindcss", "AWS (SST)"],
       description:
-        "Bookish is a semantic search engine that finds books based on the semantic meaning of your query. Typical AI apps make LLMs that UI, but I was interested in other ways of using LLMs to personalize content.",
+        "Personal contacts manager to keep track of networking connections",
       link: "https://github.com/itsRoze/dex",
     },
     {
