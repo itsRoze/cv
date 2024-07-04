@@ -122,6 +122,20 @@ export const RESUME = {
   ],
   projects: [
     {
+      title: "Digital Icebreaker",
+      techStack: [
+        "Nextjs",
+        "Tailwind",
+        "SQL",
+        "Supabase",
+        "AWS (SST)",
+        "Drizzle",
+      ],
+      description:
+        "An early prototype for 4RL that could be used in person for events, conferences, and meetups.",
+      link: "https://beta.4rlapp.com/",
+    },
+    {
       title: "Attrition Prediction to Reduce Anxious Thinking",
       techStack: ["python", "scikit-learn", "pandas", "NumPy"],
       description:
