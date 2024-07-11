@@ -9,7 +9,7 @@ import { RESUME } from "@/data/resume";
 
 export default function Page() {
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
+    <main>
       <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4">
         <Heading />
         <Section>
@@ -21,14 +21,19 @@ export default function Page() {
         <School />
         <Work />
         <Projects />
-        <Skills />
       </section>
 
       <CommandMenu
         links={[
           {
-            url: RESUME.personalWebsiteUrl,
-            title: "Personal Website",
+            url: "/",
+            title: "CV",
+            targetSelf: true,
+          },
+          {
+            url: "/posts",
+            title: "Posts",
+            targetSelf: true,
           },
           ...RESUME.contact.social.map((socialMediaLink) => ({
             url: socialMediaLink.url,
@@ -131,7 +136,11 @@ const Work = () => {
             <CardHeader>
               <div className="flex items-center justify-between gap-x-2 text-base">
                 <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
-                  <a className="hover:underline" href={work.link}>
+                  <a
+                    className="hover:underline"
+                    href={work.link}
+                    target="_blank"
+                  >
                     {work.company}
                   </a>
 
@@ -158,6 +167,17 @@ const Work = () => {
             </CardHeader>
             <CardContent className="mt-2 text-sm print:text-[10px]">
               {work.description}
+              <div className="flex flex-wrap gap-1 py-2">
+                {work.skills.map((badge) => (
+                  <Badge
+                    variant={"secondary"}
+                    className="px-1 py-0 text-[10px] print:px-1 print:py-0.5 print:text-[8px] print:leading-tight"
+                    key={badge}
+                  >
+                    {badge}
+                  </Badge>
+                ))}
+              </div>
             </CardContent>
           </Card>
         );
@@ -183,30 +203,6 @@ const Projects = () => {
           );
         })}
       </div>
-    </Section>
-  );
-};
-
-const Skills = () => {
-  return (
-    <Section>
-      <h2 className="text-xl font-bold">Skills</h2>
-      {RESUME.skills.map((skill) => (
-        <Card key={skill.area}>
-          <CardHeader>
-            <h3 className="font-semibold leading-none">{skill.area}</h3>
-          </CardHeader>
-          <CardContent className="mt-2 text-sm print:text-[10px]">
-            <div className="flex flex-wrap gap-x-1 gap-y-2">
-              {skill.skills.map((badge) => (
-                <Badge className="print:text-[10px]" key={badge}>
-                  {badge}
-                </Badge>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      ))}
     </Section>
   );
 };

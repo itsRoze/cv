@@ -15,7 +15,7 @@ import { Button } from "./ui/button";
 import { CommandIcon } from "lucide-react";
 
 interface Props {
-  links: { url: string; title: string }[];
+  links: { url: string; title: string; targetSelf?: boolean }[];
 }
 
 export const CommandMenu = ({ links }: Props) => {
@@ -65,12 +65,12 @@ export const CommandMenu = ({ links }: Props) => {
             </CommandItem>
           </CommandGroup>
           <CommandGroup heading="Links">
-            {links.map(({ url, title }) => (
+            {links.map(({ url, title, targetSelf }) => (
               <CommandItem
                 key={url}
                 onSelect={() => {
                   setOpen(false);
-                  window.open(url, "_blank");
+                  window.open(url, targetSelf ? "_self" : "_blank");
                 }}
               >
                 <span>{title}</span>
