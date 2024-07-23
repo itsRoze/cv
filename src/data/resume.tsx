@@ -59,7 +59,7 @@ export const RESUME = {
         "Figma",
       ],
       description:
-        "At 4RL I developed mockups and prototypes for an AI-powered social toolkit AI-powered social toolkit for locals to find community and friendship, tackling the loneliness epidemic. I oversaw diverse responsibilities including fundraising, sales, and operations. We engaged 100+ users, validating the product's market fit",
+        "At 4RL, I developed mockups and prototypes for an AI-powered social toolkit to tackle the loneliness epidemic. We engaged 100+ users, validating the product's market fit. I wore many hats including fundraising, sales, and operations",
     },
     {
       company: "Codestache",
