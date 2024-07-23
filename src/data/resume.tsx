@@ -83,7 +83,7 @@ export const RESUME = {
         "Figma",
       ],
       description:
-        "I founded an independent software engineering company focused on prototyping MVPs for emerging startup opportunities. I developed and launced Modal, a productivity SaaS application that gained significant traction and was featured on Product Hunt",
+        "I founded an independent software engineering company focused on prototyping MVPs for emerging startup opportunities. I developed and launched Modal, a productivity SaaS application that gained significant traction and was featured on Product Hunt",
     },
     {
       company: "Epic",
