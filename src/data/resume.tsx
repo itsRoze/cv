@@ -170,7 +170,7 @@ export const RESUME = {
       title: "IoT Search Engine",
       techStack: ["SQL", "Angular", "Express"],
       description:
-        "Built for the campus maintainance team at my university. The search engine allowed workers to search sensor data from IoT devices to monitor things like temperature and CO2.",
+        "Built for the campus maintenance team at my university. The search engine allowed workers to search sensor data from IoT devices to monitor things like temperature and CO2.",
       link: "https://docs.google.com/presentation/d/e/2PACX-1vRaaSJg944iaiN75v8j0G9C7yWL0QFn8OMvCcW_Gm3mjOELJnyPz6ZSR9JMdf8hioSI18LeVj2FNruz/pub?start=false&loop=false&delayms=3000#slide=id.g464c87f956_0_902",
     },
     {
