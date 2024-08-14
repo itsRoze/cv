@@ -59,18 +59,19 @@ export const RESUME = {
         "Figma",
       ],
       description:
-        "At 4RL, I developed mockups and prototypes for an AI-powered social toolkit to tackle the loneliness epidemic. We engaged 100+ users, validating the product's market fit. I wore many hats including fundraising, sales, and operations",
+        "As the Technical Cofounder of 4RL, I lead the development of technology solutions to address the loneliness epidemic. By developing a prototype validated with over 100 users, we aim to create meaningful in-person connections and foster a sense of community. My responsibilities include fundraising, sales, and operational efforts, driving overall success and growth. Collaborating with local government leaders and business owners, we are enhancing foot traffic to local establishments and community spaces.",
     },
     {
       company: "Codestache",
       link: "https://www.codestache.com/",
       badges: ["Remote"],
-      title: "Founder & Engineer",
+      title: "Independent Software Engineer and Researcher",
       start: "Sep 2022",
       end: "Apr 2024",
       skills: [
         "MySQL",
         "Typescript",
+        "Python",
         "NextJs",
         "React",
         "React Native",
@@ -83,7 +84,7 @@ export const RESUME = {
         "Figma",
       ],
       description:
-        "I founded an independent software engineering company focused on prototyping MVPs for emerging startup opportunities. I developed and launched Modal, a productivity SaaS application that gained significant traction and was featured on Product Hunt",
+        "As an Independent Software Engineer and Researcher, I launched and prototyped innovative software solutions. I successfully launched Modal, a productivity SaaS application that gained significant traction and was featured on Product Hunt. Additionally, I co-authored a research paper on the MindTrails Clinical Psychology Program, accepted in the Journal of Medical Internet Research. My work involved identifying emerging startup opportunities and developing MVPs, leveraging my expertise in software engineering and AI/ML integration.",
     },
     {
       company: "Epic",
@@ -103,7 +104,7 @@ export const RESUME = {
         "Balsamiq",
       ],
       description:
-        "At Epic, I directed a new infrastructure team processing 20,000 lab orders monthly. migrated our legacy codebase to React (scaling for 250+ million patient records exchanges per month), and transformed our UI to enhance clinical training (it became the company’s top-performing educational tool of the year). As an R&D Team Lead, I also managed projects, team operations, and people; participated in sales calls and conducted on-site hospital visits to gather user feedback",
+        "As a Software Engineer Team Lead at Epic, I led a new infrastructure team processing 20,000 lab orders monthly, significantly contributing to new sales and customer acquisition. I mentored a team of engineers, fostering a collaborative and high-performance culture. I played a key role in sales calls, conducted on-site hospital visits to gather user insights, and led conference sessions to share best practices and innovations. Before being a team lead, I worked as a Software Engineer on the Care Everywhere app, focusing on healthcare interoperability. I played a crucial role in migrating the legacy codebase to a web-based stack using React, scaling patient records exchanges to over 250 million per month. Additionally, I transformed the UI enhancing clinical awareness of healthcare interoperability, making it the company's top-performing educational tool of the year",
     },
     {
       company: "UVA",
@@ -114,7 +115,7 @@ export const RESUME = {
       end: "May 2019",
       skills: ["Python", "NumPy", "Pandas", "scikit-learn", "SQL"],
       description:
-        "I developed an algorithm identifying high-risk anxiety patients for the MindTrails clinical psychology program which was implemented on ~1000 participants in production. I was awarded High Distinctions for this research and the findings from the team are published in JMIR",
+        "As a Machine Learning Researcher at the University of Virginia, I developed a machine learning model to identify high-risk anxiety patients. This model was implemented in the MindTrails Clinical Psychology Program and impacted over 1000 participants. My research contributed to a co-authored paper published in the Journal of Medical Internet Research, advancing clinical psychology by providing valuable insights into patient dropout prediction and intervention strategies.",
     },
     {
       company: "Epic",
@@ -125,7 +126,7 @@ export const RESUME = {
       end: "Aug 2018",
       skills: ["Javascript", "C#", "MSSQL"],
       description:
-        "Developed a backend data visualization feature using MSSQL, C#, JavaScript, and M to enhance medical research on social determinants of health. Designed the entire data model, enabling detailed analysis and insights for researchers",
+        "During my internship at Epic, I developed a data visualization tool that enabled detailed analysis of social determinants of health for researchers. This tool facilitated a better understanding of patient backgrounds and improved healthcare delivery. My work involved creating a star-schema data model and an ETL process using MSSQL and the M language, with visualization done using JavaScript",
     },
   ],
   projects: [
