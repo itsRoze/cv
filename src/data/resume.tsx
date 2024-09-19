@@ -59,13 +59,13 @@ export const RESUME = {
         "Figma",
       ],
       description:
-        "As the Technical Cofounder of 4RL, I lead the development of technology solutions to address the loneliness epidemic. By developing a prototype validated with over 100 users, we aim to create meaningful in-person connections and foster a sense of community. My responsibilities include fundraising, sales, and operational efforts, driving overall success and growth. Collaborating with local government leaders and business owners, we are enhancing foot traffic to local establishments and community spaces.",
+        "As the Technical Cofounder of 4RL, I lead the development of solutions to combat the loneliness epidemic by fostering meaningful in-person connections. Through rapid prototyping and user testing, we validated product-market fit, facilitating 300+ in-person connections through our app. By collaborating with local government leaders and business owners, we are enhancing foot traffic to local establishments and community spaces. In addition to driving technical development, I manage fundraising, sales, and operations, ensuring the overall growth and success of this early-stage startup",
     },
     {
       company: "Codestache",
       link: "https://www.codestache.com/",
       badges: ["Remote"],
-      title: "Independent Software Engineer and Researcher",
+      title: "Software Engineering Consultant",
       start: "Sep 2022",
       end: "Apr 2024",
       skills: [
@@ -84,13 +84,13 @@ export const RESUME = {
         "Figma",
       ],
       description:
-        "As an Independent Software Engineer and Researcher, I launched and prototyped innovative software solutions. I successfully launched Modal, a productivity SaaS application that gained significant traction and was featured on Product Hunt. Additionally, I co-authored a research paper on the MindTrails Clinical Psychology Program, accepted in the Journal of Medical Internet Research. My work involved identifying emerging startup opportunities and developing MVPs, leveraging my expertise in software engineering and AI/ML integration.",
+        "I founded Code Stache to help emerging startups quickly prototype MVPs and turn ideas into viable products. I led the end-to-end development process, ensuring alignment between business objectives and technical execution. One of the products, Modal, a productivity SaaS application, gained significant traction and was featured on Product Hunt",
     },
     {
       company: "Epic",
       link: "https://www.epic.com/",
       badges: ["Madison, WI"],
-      title: "R&D Team Lead",
+      title: "Software Engineer Team Lead",
       start: "Sep 2019",
       end: "Jul 2022",
       skills: [
@@ -104,7 +104,7 @@ export const RESUME = {
         "Balsamiq",
       ],
       description:
-        "As a Software Engineer Team Lead at Epic, I led a new infrastructure team processing 20,000 lab orders monthly, significantly contributing to new sales and customer acquisition. I mentored a team of engineers, fostering a collaborative and high-performance culture. I played a key role in sales calls, conducted on-site hospital visits to gather user insights, and led conference sessions to share best practices and innovations. Before being a team lead, I worked as a Software Engineer on the Care Everywhere app, focusing on healthcare interoperability. I played a crucial role in migrating the legacy codebase to a web-based stack using React, scaling patient records exchanges to over 250 million per month. Additionally, I transformed the UI enhancing clinical awareness of healthcare interoperability, making it the company's top-performing educational tool of the year",
+        "At Epic, I built and led a team responsible for scaling a new healthcare application, which contributed to significant new sales and customer acquisition. I mentored engineers and managed staff. Before becoming a manager, I played a crucial role in migrating the legacy codebase to a web-based stack using React, scaling patient records exchanges to over 250 million per month",
     },
     {
       company: "UVA",
@@ -115,7 +115,7 @@ export const RESUME = {
       end: "May 2019",
       skills: ["Python", "NumPy", "Pandas", "scikit-learn", "SQL"],
       description:
-        "As a Machine Learning Researcher at the University of Virginia, I developed a machine learning model to identify high-risk anxiety patients. This model was implemented in the MindTrails Clinical Psychology Program and impacted over 1000 participants. My research contributed to a co-authored paper published in the Journal of Medical Internet Research, advancing clinical psychology by providing valuable insights into patient dropout prediction and intervention strategies.",
+        "As a Machine Learning Researcher at the University of Virginia, I created a model to identify high-risk anxiety patients in a clinical psychology program. This model was implemented for over 1000 participants. My ongoing work in a part-time/on-demand capacity led to co-authorship on a paper accepted by the Journal of Medical Internet Research (Jun 2024) and inclusion in the upcoming ABCT Symposium (Nov 2024)",
     },
     {
       company: "Epic",
