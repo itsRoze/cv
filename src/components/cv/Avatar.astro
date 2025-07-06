@@ -1,0 +1,29 @@
+---
+export interface Props {
+  src?: string;
+  alt?: string;
+  class?: string;
+}
+const { src, alt, class: extra = "" } = Astro.props;
+---
+
+<figure class={`relative flex overflow-hidden rounded-2xl ${extra}`}>
+  {
+    src && (
+      <img
+        src={src}
+        alt={alt}
+        class="aspect-square h-full w-full"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+      />
+    )
+  }
+  <div class="hidden h-full w-full items-center justify-center bg-gray-100">
+    <slot name="fallback">
+      <!-- default fallback if none provided -->
+      <span class="text-xs font-medium uppercase text-muted-foreground">
+        ?
+      </span>
+    </slot>
+  </div>
+</figure>

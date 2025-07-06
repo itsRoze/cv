@@ -1,0 +1,23 @@
+---
+import Section from "../Section.astro";
+import ProjectCard from "../cv/ProjectCard.astro";
+import { RESUME } from "../../data/resume.ts";
+---
+
+<Section class="print-force-new-page scroll-mb-16">
+  <h2 class="text-xl font-bold">Projects</h2>
+  <div
+    class="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3"
+  >
+    {
+      RESUME.projects.map((proj) => (
+        <ProjectCard
+          title={proj.title}
+          description={proj.description}
+          tags={proj.techStack}
+          link={proj.link}
+        />
+      ))
+    }
+  </div>
+</Section>

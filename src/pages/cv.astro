@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Heading from "../components/cv/Heading.astro";
+import Summary from "../components/cv/Summary.astro";
+import Education from "../components/cv/Education.astro";
+import Projects from "../components/cv/Projects.astro";
+import Work from "../components/cv/Work.astro";
+---
+
+<Layout>
+  <main class="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4">
+    <section
+      class="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4"
+    >
+      <Heading />
+      <Summary />
+      <Education />
+      <Work />
+      <Projects />
+    </section>
+  </main>
+</Layout>

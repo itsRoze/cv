@@ -1,0 +1,21 @@
+---
+export interface EducationItem {
+  school: string;
+  degree: string;
+  start?: string;
+  end: string;
+}
+
+export interface Props {
+  item: EducationItem;
+}
+const { item } = Astro.props;
+---
+
+<article class="">
+  <header class="flex items-center justify-between gap-x-2 text-base">
+    <h3 class="font-semibold leading-none">{item.school}</h3>
+    <time class="text-xs tabular-nums text-gray-500">{item.end}</time>
+  </header>
+  <p class="mt-2 text-sm leading-relaxed text-gray-500">{item.degree}</p>
+</article>

@@ -11,3 +11,7 @@
 a {
   @apply cursor-crosshair;
 }
+
+.print-force-new-page {
+  page-break-before: always;
+}
