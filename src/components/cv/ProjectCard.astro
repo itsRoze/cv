@@ -1,0 +1,53 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  tags: readonly string[];
+  link?: string;
+}
+
+const { title, description, tags, link } = Astro.props;
+const host = link
+  ? link
+      .replace(/^https?:\/\//, "")
+      .replace(/^www\./, "")
+      .replace(/\/$/, "")
+  : null;
+---
+
+<article
+  class="flex flex-col overflow-hidden border border-gray-100 rounded-lg p-3"
+>
+  <header class="space-y-1">
+    <h3 class="text-base font-semibold leading-none">
+      {
+        link ? (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1 hover:underline"
+          >
+            {title}
+          </a>
+        ) : (
+          title
+        )
+      }
+    </h3>
+    {host && <div class="hidden text-xs underline print:visible">{host}</div>}
+    <p class="text-gray-500 text-xs print:text-[10px]">
+      {description}
+    </p>
+  </header>
+
+  <div class="mt-auto flex flex-wrap gap-1 pt-2">
+    {
+      tags.map((tag) => (
+        <span class="rounded bg-gray-100 font-semibold px-1 py-0 text-[10px] print:px-1 print:py-0.5 print:text-[8px] print:leading-tight">
+          {tag}
+        </span>
+      ))
+    }
+  </div>
+</article>

@@ -1,0 +1,12 @@
+---
+import WorkCard from "./WorkCard.astro";
+import Section from "../Section.astro";
+import { RESUME } from "../../data/resume.ts";
+---
+
+<Section>
+  <h2 class="text-xl font-bold">Work Experience</h2>
+  <div class="space-y-6">
+    {RESUME.work.map((job) => <WorkCard job={job} />)}
+  </div>
+</Section>

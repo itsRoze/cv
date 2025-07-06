@@ -1,0 +1,42 @@
+---
+import Layout from "./Layout.astro";
+
+interface Props {
+  title: string;
+  excerpt: string;
+  ogImage?: string;
+  date: Date;
+  minutesRead: string;
+}
+const { title, excerpt, ogImage, date, minutesRead } = Astro.props;
+---
+
+<Layout
+  title={title}
+  description={excerpt}
+  image={ogImage}
+  type="article"
+  date={date}
+>
+  <main class="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4">
+    <h1 class="text-3xl font-bold pb-4">
+      {title}
+    </h1>
+    <div class="space-x-4 text-sm font-medium">
+      <time
+        >🗓️ {
+          new Date(date).toLocaleDateString("en-us", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })
+        }</time
+      ><span>⏳ {minutesRead}</span>
+    </div>
+    <article
+      class="prose prose-h1:text-2xl max-w-screen-md px-0 lg:mt-8 mt-4 markdown"
+    >
+      <slot />
+    </article>
+  </main>
+</Layout>

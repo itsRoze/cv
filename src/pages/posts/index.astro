@@ -1,0 +1,52 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { getCollection, getEntry, render } from "astro:content";
+import BlogCard from "@components/BlogCard.astro";
+
+const allPosts = (await getCollection("blog"))
+  .filter((p) => !p.data.isDraft)
+  .sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+  );
+
+// turn each entry into a plain object with its minutesRead
+const posts = await Promise.all(
+  allPosts.map(async (post) => {
+    const entry = await getEntry("blog", post.id);
+    if (!entry) {
+      throw new Error("Could not find entry for post: " + post.id);
+    }
+    const { remarkPluginFrontmatter } = await render(entry);
+    return {
+      slug: post.id,
+      title: post.data.title,
+      excerpt: post.data.excerpt,
+      date: post.data.date,
+      minutesRead: remarkPluginFrontmatter.minutesRead,
+    };
+  }),
+);
+---
+
+<Layout title="elijah | posts" description="Blog">
+  <main class="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4">
+    <h1 class="font-bold text-7xl">Posts</h1>
+    <section>
+      <ul class="space-y-6">
+        {
+          posts.map((post) => (
+            <li>
+              <BlogCard
+                url={`/posts/${post.slug}`}
+                title={post.title}
+                excerpt={post.excerpt}
+                date={post.date}
+                minutesRead={post.minutesRead}
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+</Layout>

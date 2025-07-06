@@ -1,0 +1,31 @@
+---
+const pages = [
+  {
+    href: "/cv",
+    label: "cv",
+  },
+  {
+    href: "/projects",
+    label: "projects",
+  },
+  {
+    href: "/posts",
+    label: "posts",
+  },
+];
+---
+
+<nav class="mx-auto w-full max-w-2xl bg-white">
+  <ul class="flex gap-x-4 text-sm">
+    <li>
+      <a href="/" class="font-medium"> elijahlewis.dev </a>
+    </li>
+    {
+      pages.map(({ href, label }) => (
+        <li class="hover:underline hover:underline-offset-8 hover:-translate-y-1 transition-transform duration-150">
+          <a href={href}>{label}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

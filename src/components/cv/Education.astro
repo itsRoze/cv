@@ -1,0 +1,10 @@
+---
+import Section from "../Section.astro";
+import EducationCard from "../cv/EducationCard.astro";
+import { RESUME } from "../../data/resume.ts";
+---
+
+<Section>
+  <h2 class="text-xl font-bold">Education</h2>
+  {RESUME.education.map((item) => <EducationCard item={item} />)}
+</Section>

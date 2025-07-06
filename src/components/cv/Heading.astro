@@ -1,0 +1,61 @@
+---
+import { RESUME } from "../../data/resume";
+import Avatar from "./Avatar.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<div class="flex items-center justify-between">
+  <div class="flex-1 space-y-1.5">
+    <h1 class="text-2xl font-bold">{RESUME.name}</h1>
+    <p class="max-w-md text-pretty print:text-[12px] text-gray-500">
+      {RESUME.about}
+    </p>
+    <p class="max-w-md items-center text-pretty text-sm text-gray-500">
+      <a
+        class="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+        href={RESUME.locationLink}
+        target="_blank"
+      >
+        <Icon name="lucide:globe" class="size-4" />
+        {RESUME.location}
+      </a>
+    </p>
+    <div class="flex gap-x-4 pt-1 text-sm text-gray-500 print:hidden">
+      {
+        RESUME.contact.email ? (
+          <a
+            href={`mailto:${RESUME.contact.email}`}
+            class="transform duration-100 hover:-translate-y-1 hover:rotate-12"
+          >
+            <Icon name="lucide:mail" class="size-6" />
+          </a>
+        ) : null
+      }
+      {
+        RESUME.contact.social.map((social) => (
+          <a
+            target="_blank"
+            href={social.url}
+            class="transform duration-100 hover:-translate-y-1 hover:rotate-12"
+          >
+            <Icon name={social.name} class="size-6" />
+          </a>
+        ))
+      }
+    </div>
+    <div
+      class="hidden flex-col gap-x-1 text-sm text-gray-500d print:flex print:text-[12px]"
+    >
+      {
+        RESUME.contact.email ? (
+          <a href={`mailto:${RESUME.contact.email}`}>
+            <span class="underline">{RESUME.contact.email}</span>
+          </a>
+        ) : null
+      }
+    </div>
+  </div>
+  <Avatar src={RESUME.avatarUrl} alt={RESUME.name} class="size-24">
+    <span slot="fallback">{RESUME.initials}</span>
+  </Avatar>
+</div>
