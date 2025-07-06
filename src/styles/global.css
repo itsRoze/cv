@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin '@tailwindcss/typography';
 
 @theme {
   --font-lato: "Noto Sans Lao Variable", "sans-serif";
@@ -14,4 +15,8 @@ a {
 
 .print-force-new-page {
   page-break-before: always;
+}
+
+.markdown .expressive-code {
+  @apply my-5;
 }
