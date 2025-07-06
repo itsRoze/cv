@@ -1,5 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import Title from "@components/Title.astro";
 import { getCollection, getEntry, render } from "astro:content";
 import BlogCard from "@components/BlogCard.astro";
 
@@ -30,7 +31,7 @@ const posts = await Promise.all(
 
 <Layout title="elijah | posts" description="Blog">
   <main class="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4">
-    <h1 class="font-bold text-7xl">Posts</h1>
+    <Title>Posts</Title>
     <section>
       <ul class="space-y-6">
         {

@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Title from "../components/Title.astro";
 import projects from "@data/projects.json";
 ---
 
 <Layout title="elijah | projects" description="Coding projects">
   <main class="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4">
-    <h1 class="font-bold text-7xl">Projects</h1>
+    <Title>Projects</Title>
     <ul class="space-y-6">
       {
         projects.map(({ title, url, description }) => (

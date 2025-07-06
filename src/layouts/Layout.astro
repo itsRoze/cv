@@ -4,17 +4,28 @@ import "@fontsource-variable/noto-sans-lao";
 
 import "../styles/global.css";
 import Nav from "../components/Nav.astro";
+import Head from "@components/Head.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: "website" | "article";
+  date?: Date;
+}
+
+const { title, description, image, type = "website", date } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
-  </head>
+  <Head
+    title={title ?? "elijah | developer"}
+    description={description ?? "Elijah Lewis' personal website."}
+    image={image}
+    type={type}
+    date={date}
+  />
   <body class="font-lato">
     <header
       class="container mx-auto p-4 pt-4 print:p-12 print:pt-8 md:p-16 md:pt-8"
