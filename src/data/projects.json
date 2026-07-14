@@ -12,7 +12,7 @@
     "description": "My first SaaS app. I never found a great productivity manager, so I built an opinionated one. Modal was designed with simplicity for the everyday user.",
     "year": "2023-Present",
     "featured": true,
-    "url": "https://usemodal.com/",
+    "url": "https://github.com/itsRoze/modal",
     "tags": ["React", "NextJS", "Tailwind CSS", "React Native", "AWS", "SQL"]
   },
   {
@@ -36,7 +36,7 @@
     "title": "4RL Digital Icebreaker",
     "description": "An early prototype for 4RL that could be used in person for events, conferences, and meetups.",
     "year": "2024",
-    "url": "https://beta.4rlapp.com/",
+    "url": "https://github.com/itsRoze/4RL-Prototype",
     "tags": ["NextJS", "AWS", "Tailwind CSS"]
   },
   {
@@ -57,7 +57,7 @@
     "title": "Giftable",
     "description": "I created Giftable so that I could remember gift ideas for friends and family, as well as myself :) I thought building a social network would be a great learning experience to up my code skills too",
     "year": "2022-2023",
-    "url": "https://giftableapp.com/",
+    "url": "https://github.com/itsRoze/giftable",
     "tags": ["React", "NextJS", "Tailwind CSS", "SQL"]
   },
   {
