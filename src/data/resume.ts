@@ -25,7 +25,7 @@ export const RESUME = {
   name: "Elijah Lewis",
   location: "New York City",
   summary:
-    "Software engineer at First Round Capital. I build internal tools for a small investment team, write about software and cooperatives, and did machine-learning research on anxiety interventions at UVA.",
+    "I'm a product engineer who ships 0→1 tools for small, mission-driven teams, and I lead AI-first, agentic engineering practice (Claude Code, MCP, custom internal tooling). I work full-stack, from healthcare-interoperability legacy systems to modern serverless stacks, and I volunteer in civic tech, where my work is cited in human rights reports.",
   contact: {
     email: "hello@elijahlewis.dev",
     tel: "703-554-7193",
@@ -44,12 +44,14 @@ export const RESUME = {
       end: "Present",
       bullets: [
         "One of two engineers firm-wide, owning end-to-end design, data, infra, and vendor decisions for the firm's internal product platform; shadow partners during live deal flow meetings to inform product decisions.",
+        "Built the firm's internal MCP server (the \"company brain\"), giving AI agents governed access to firm data and business context across tools, and set the team's modern engineering stack (TypeScript, AWS serverless, Postgres + Supabase).",
         'Co-shipped "At A Glance," the firm\'s daily-driver deal review tool used by every partner, chief of staff, and investor; described internally as mission-critical and credited with helping the firm review a record-high 10,000+ investment opportunities in a single year.',
         'Co-designed and built "First Source," scanning the open web and third-party APIs (Harmonic, Twitter, etc.) to surface emerging startups; aggregates 200+ AI-enriched signals weekly for structured human review.',
-        "Proposed and led adoption of the firm's modern engineering stack for all new systems.",
-        "Pioneered AI-first development: first to adopt Claude Code, developed approaches for grounding it in the firm's business context, shipped 100% AI-coded PRs, and established patterns adopted by the team.",
+        "Designed and shipped a custom IDE for the engineering team: a desktop app that provisions each engineer a dedicated EC2 environment running Claude Code with specialized skills and port-forwarding to their local machine.",
+        "Created agentic development workflows (Claude skills) that scope a Linear ticket, plan it with Codex, present the plan as an interactive HTML spec, review the code, and open a PR — used daily inside the custom IDE.",
+        "Built two Linear AI agents — a scoping agent that explores features and presents mockups, and a builder agent that scopes, asks clarifying questions, delivers an HTML plan, and submits a PR entirely via Linear comments, validating features with Playwright MCP screenshots.",
       ],
-      skills: ["TypeScript", "AWS serverless", "Postgres", "Supabase"],
+      skills: ["TypeScript", "AWS serverless", "Postgres", "Supabase", "MCP"],
     },
     {
       company: "Inner File Software",
@@ -96,9 +98,9 @@ export const RESUME = {
       start: "Sep 2019",
       end: "Jul 2022",
       bullets: [
-        "Promoted to Medium Team Lead within one year of becoming an IC; managed 5 direct reports as one of two team leads in Care Everywhere's Results division (labs and imaging, ~50 people), setting roadmap and coordinating across adjacent teams.",
-        'Drove rollout of "Aura," one of the largest projects in Care Everywhere and still referenced in Epic staff meetings; contributed directly to sales proposals for early customers who became paying customers; represented the platform in sales calls and on-site hospital visits.',
-        "Previously as IC, contributed to scaling patient record exchange to 250M+ records/month as part of the legacy migration to React and C#; led UI modernization for clinical training that became Epic's top-performing educational tool of the year by views.",
+        "Promoted from IC to manager (3 direct reports), then to Medium Team Lead (5 direct reports) within a year; one of two team leads in Care Everywhere's Results division (labs and imaging, ~50 people), setting roadmap and coordinating across adjacent teams.",
+        "Led the effort to rebuild Aura for scale after its initial launch — one of the largest projects in Care Everywhere and still referenced in Epic staff meetings; contributed directly to sales proposals for early customers who became paying customers, and represented the platform in sales calls and on-site hospital visits.",
+        "As IC, integrated with legacy hospital systems and complex healthcare interoperability standards (HL7/CDA-era) to scale patient-record exchange to 250M+ records/month; modernized a legacy VB codebase to React and built a clinical training feature that became Epic's top-performing educational tool of the year by views.",
       ],
       skills: ["React", "C#"],
     },
@@ -136,8 +138,7 @@ export const RESUME = {
       "Claude Code",
       "Codex",
       "MCP",
-      "Parallel",
-      "OpenAI",
+      "Playwright MCP",
       "RAG",
       "Agentic workflows",
       "Prompt engineering",
@@ -145,6 +146,7 @@ export const RESUME = {
     Languages: ["TypeScript", "Python", "JavaScript", "SQL", "C#"],
     "Systems & Tools": [
       "AWS",
+      "EC2",
       "Postgres",
       "Supabase",
       "pgVector",
@@ -153,6 +155,14 @@ export const RESUME = {
       "Tailwind",
       "Docker",
       "GitHub Actions",
+    ],
+    Practices: [
+      "Git version control",
+      "code review",
+      "CI/CD",
+      "testing",
+      "observability",
+      "legacy system integration",
     ],
   },
 } as const;
