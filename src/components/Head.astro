@@ -9,6 +9,9 @@ interface Props {
 
 const { title, description, image, type, date } = Astro.props;
 const { pathname } = Astro.url;
+
+const SITE = "https://elijahlewis.dev";
+const ogImage = `${SITE}${image ?? "/images/elijahlewis.jpg"}`;
 ---
 
 <head>
@@ -24,21 +27,15 @@ const { pathname } = Astro.url;
   }
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:url" content={`https://elijahlewis.dev${pathname}`} />
-  <meta
-    property="og:image"
-    content={`https://elijahlewis.dev${image ?? "/images/elijahlewis.jpg"}`}
-  />
+  <meta property="og:url" content={`${SITE}${pathname}`} />
+  <meta property="og:image" content={ogImage} />
   <meta property="og:type" content={type ?? "website"} />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta
-    name="twitter:image"
-    content={`https://elijahlewis.dev${image ?? "/images/elijahlewis.jpg"}`}
-  />
-  <link rel="canonical" href={`https://elijahlewis.dev${pathname}`} />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="twitter:image" content={ogImage} />
+  <link rel="canonical" href={`${SITE}${pathname}`} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>

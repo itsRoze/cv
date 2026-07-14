@@ -1,0 +1,85 @@
+---
+/**
+ * A work/project card: hard-bordered, content-forward (title, year, description,
+ * tech tags, links). The first tag carries the single indigo spot so a grid of
+ * cards keeps a consistent accent — no per-card rotation (that's roze.dev's
+ * riso move; this is the letterhead). Renders unlinked when no url/github.
+ */
+interface Props {
+  title: string;
+  year?: string | number;
+  description?: string;
+  tags?: string[];
+  url?: string;
+  github?: string;
+}
+
+const { title, year, description, tags = [], url, github } = Astro.props;
+---
+
+<article class="flex flex-col gap-3 border-[3px] border-line bg-paper p-5">
+  <div class="flex items-start justify-between gap-3">
+    <h3 class="font-sans text-lg leading-tight font-extrabold uppercase">
+      {title}
+    </h3>
+    {
+      year && (
+        <span class="font-mono text-xs whitespace-nowrap text-faint">
+          {year}
+        </span>
+      )
+    }
+  </div>
+
+  {
+    description && (
+      <p class="flex-1 text-sm leading-relaxed text-muted">{description}</p>
+    )
+  }
+
+  {
+    tags.length > 0 && (
+      <div class="flex flex-wrap gap-1.5">
+        {tags.map((t, i) => (
+          <span
+            class:list={[
+              "border px-1.5 py-0.5 font-mono text-[10px] tracking-wide uppercase",
+              i === 0
+                ? "border-indigo bg-indigo text-paper"
+                : "border-line text-muted",
+            ]}
+          >
+            {t}
+          </span>
+        ))}
+      </div>
+    )
+  }
+
+  {
+    (url || github) && (
+      <div class="flex gap-4 pt-1 font-mono text-xs">
+        {url && (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-indigo hover:underline"
+          >
+            site ↗
+          </a>
+        )}
+        {github && (
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-indigo hover:underline"
+          >
+            github ↗
+          </a>
+        )}
+      </div>
+    )
+  }
+</article>

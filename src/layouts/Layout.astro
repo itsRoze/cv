@@ -1,7 +1,12 @@
 ---
-import "../styles/global.css";
-import Nav from "../components/Nav.astro";
+import "@styles/global.css";
+import "@fontsource/anton";
+import "@fontsource-variable/archivo";
+import "@fontsource/space-mono/400.css";
+import "@fontsource/space-mono/700.css";
 import Head from "@components/Head.astro";
+import Nav from "@components/Nav.astro";
+import Footer from "@components/Footer.astro";
 
 interface Props {
   title?: string;
@@ -17,18 +22,16 @@ const { title, description, image, type = "website", date } = Astro.props;
 <!doctype html>
 <html lang="en">
   <Head
-    title={title ?? "elijah | developer"}
-    description={description ?? "Elijah Lewis' personal website."}
+    title={title ?? "Elijah Lewis"}
+    description={description ??
+      "Elijah Lewis — engineer at First Round Capital, writer, researcher."}
     image={image}
     type={type}
     date={date}
   />
-  <body class="font-lato">
-    <header
-      class="container mx-auto p-4 pt-4 print:p-12 print:pt-8 md:p-16 md:pt-8"
-    >
-      <Nav />
-    </header>
-    <slot />
+  <body class="flex min-h-screen flex-col bg-bg text-ink">
+    <Nav />
+    <main class="flex-1"><slot /></main>
+    <Footer />
   </body>
 </html>
