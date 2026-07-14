@@ -3,7 +3,7 @@
  * A work/project card: hard-bordered, content-forward (title, year, description,
  * tech tags, links). The first tag carries the single indigo spot so a grid of
  * cards keeps a consistent accent — no per-card rotation (that's roze.dev's
- * riso move; this is the letterhead). Renders unlinked when no url/github.
+ * riso move; this is the letterhead). Renders unlinked when no url.
  */
 interface Props {
   title: string;
@@ -11,10 +11,20 @@ interface Props {
   description?: string;
   tags?: string[];
   url?: string;
-  github?: string;
 }
 
-const { title, year, description, tags = [], url, github } = Astro.props;
+const { title, year, description, tags = [], url } = Astro.props;
+
+let linkLabel: string | null = null;
+if (url) {
+  let isGithub = false;
+  try {
+    isGithub = new URL(url).hostname === "github.com";
+  } catch {
+    isGithub = false;
+  }
+  linkLabel = isGithub ? "github ↗" : "site ↗";
+}
 ---
 
 <article class="flex flex-col gap-3 border-[3px] border-line bg-paper p-5">
@@ -57,28 +67,16 @@ const { title, year, description, tags = [], url, github } = Astro.props;
   }
 
   {
-    (url || github) && (
+    url && linkLabel && (
       <div class="flex gap-4 pt-1 font-mono text-xs">
-        {url && (
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-indigo hover:underline"
-          >
-            site ↗
-          </a>
-        )}
-        {github && (
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-indigo hover:underline"
-          >
-            github ↗
-          </a>
-        )}
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-indigo hover:underline"
+        >
+          {linkLabel}
+        </a>
       </div>
     )
   }

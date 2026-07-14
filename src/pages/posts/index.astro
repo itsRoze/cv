@@ -2,9 +2,9 @@
 import Layout from "@layouts/Layout.astro";
 import SectionHeader from "@components/SectionHeader.astro";
 import IndexRow from "@components/IndexRow.astro";
-import { getWritingRows } from "@utils/posts";
+import { getPostRows } from "@utils/posts";
 
-const rows = await getWritingRows();
+const rows = await getPostRows();
 ---
 
 <Layout

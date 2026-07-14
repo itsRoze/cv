@@ -5,9 +5,9 @@ import IndexRow from "@components/IndexRow.astro";
 import WorkCard from "@components/WorkCard.astro";
 import projects from "@data/projects.json";
 import publications from "@data/publications.json";
-import { getWritingRows } from "@utils/posts";
+import { getPostRows } from "@utils/posts";
 
-const writing = await getWritingRows(3, true);
+const writing = await getPostRows(3, true);
 const work = projects.filter((p) => "featured" in p && p.featured).slice(0, 3);
 ---
 
@@ -115,24 +115,13 @@ const work = projects.filter((p) => "featured" in p && p.featured).slice(0, 3);
     <SectionHeader title="Publications" caption="[ peer-reviewed ]" />
     {
       publications.slice(0, 2).map((pub) => (
-        <a
+        <IndexRow
           href={pub.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group grid grid-cols-[1fr_auto] items-baseline gap-5 border-b border-line py-4 transition-[padding] hover:pl-3"
-        >
-          <div>
-            <div class="font-sans text-lg font-extrabold uppercase transition-colors group-hover:text-indigo">
-              {pub.title}
-            </div>
-            <p class="mt-1 font-mono text-xs tracking-wide text-marigold uppercase">
-              {pub.journal} · {pub.year}
-            </p>
-          </div>
-          <span class="text-right font-mono text-xs whitespace-nowrap text-faint">
-            ↗
-          </span>
-        </a>
+          title={pub.title}
+          external
+          meta="↗"
+          byline={{ journal: pub.journal, year: pub.year }}
+        />
       ))
     }
     <a

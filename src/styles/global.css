@@ -23,7 +23,6 @@
   /* color — spot inks */
   --color-indigo: #1726ff; /* the spot — links, hover, active nav, labels */
   --color-marigold: #ff7d1a; /* rationed — pull quotes, journal names */
-  --color-danger: #c81e3c; /* form errors only */
 }
 
 @layer base {
@@ -47,11 +46,6 @@
   @apply my-5;
 }
 
-/* Print: letterhead degrades to paper. Keep manual page breaks. */
-.print-force-new-page {
-  page-break-before: always;
-}
-
 @media print {
   .halftone-grain,
   .print\:hidden {
@@ -62,14 +56,15 @@
   }
 }
 
-/* Respect reduced motion: kill transforms, keep color transitions. */
+/* Respect reduced motion: neutralize animation/transition timing (color
+   changes still apply instantly), never introduce new transitions. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
-    transition-property: color, background-color, border-color, fill, stroke !important;
-    transition-duration: 120ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
