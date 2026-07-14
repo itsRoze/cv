@@ -1,29 +1,32 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Title from "../components/Title.astro";
+import Layout from "@layouts/Layout.astro";
+import SectionHeader from "@components/SectionHeader.astro";
+import WorkCard from "@components/WorkCard.astro";
 import projects from "@data/projects.json";
 ---
 
-<Layout title="elijah | projects" description="Coding projects">
-  <main class="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4">
-    <Title>Projects</Title>
-    <ul class="space-y-6">
+<Layout
+  title="Projects — Elijah Lewis"
+  description="Selected projects by Elijah Lewis."
+>
+  <section class="mx-auto w-full max-w-[1100px] px-6 py-14 md:px-10">
+    <SectionHeader
+      as="h1"
+      title="Projects"
+      caption={`[ ${projects.length} projects ]`}
+    />
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
       {
-        projects.map(({ title, url, description }) => (
-          <li>
-            <div class="space-y-2">
-              <a
-                href={url}
-                target="_blank"
-                class="underline underline-offset-8 text-xl"
-              >
-                {title}
-              </a>
-              <p>{description}</p>
-            </div>
-          </li>
+        projects.map((p) => (
+          <WorkCard
+            title={p.title}
+            year={p.year}
+            description={p.description}
+            tags={p.tags}
+            url={"url" in p ? p.url : undefined}
+          />
         ))
       }
-    </ul>
-  </main>
+    </div>
+  </section>
 </Layout>
