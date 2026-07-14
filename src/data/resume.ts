@@ -1,225 +1,158 @@
+// Content authority: July 2026 resume (Resume___Current.pdf). Keep in sync with
+// the CV page. Plainspoken register per DESIGN.md Voice — no marketing gloss.
+
+export interface WorkItem {
+  company: string;
+  context?: string; // the parenthetical framing from the resume
+  link?: string;
+  location: string;
+  title: string;
+  start: string;
+  end: string;
+  bullets: string[];
+  skills?: string[]; // mono chips — only where the resume states a stack
+}
+
+export interface EducationItem {
+  school: string;
+  degree: string;
+  location: string;
+  start: string;
+  end: string;
+}
+
 export const RESUME = {
   name: "Elijah Lewis",
-  initials: "EL",
-  location: "New York, NY",
-  locationLink: "https://www.google.com/maps/place/New+York,+NY",
-  about:
-    "Product-oriented Full Stack Engineer with expertise in AI, dedicated to creating exceptional user experiences",
+  location: "New York City",
   summary:
-    "As a Full Stack Engineer, I excel in transforming product concepts into market-ready solutions, building scalable, user-friendly systems, and mentoring talented teams. My solo projects, including a SaaS product featured on Product Hunt, demonstrate my ability to identify market needs and deliver high-quality solutions. My work in machine learning was recognized with High Distinctions from UVA. I am currently building tools for the investment team at First Round Capital.",
-  avatarUrl:
-    "https://media.licdn.com/dms/image/v2/D4E03AQFVuFWdRAycEw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1683078934283?e=1757548800&v=beta&t=si62x9cSgcxB1PV6A1LIhEmfpYu0u9VfoAOP9rEORFk",
-  personalWebsiteUrl: "https://www.roze.dev/",
+    "Software engineer at First Round Capital. I build internal tools for a small investment team, write about software and cooperatives, and did machine-learning research on anxiety interventions at UVA.",
   contact: {
     email: "hello@elijahlewis.dev",
-    tel: "",
-    social: [
-      {
-        name: "lucide:github",
-        url: "https://github.com/itsRoze/",
-      },
-      {
-        name: "lucide:linkedin",
-        url: "https://www.linkedin.com/in/lewiselijah/",
-      },
-    ],
+    tel: "703-554-7193",
+    linkedin: "https://www.linkedin.com/in/lewiselijah/",
+    github: "https://github.com/itsRoze",
+    website: "https://elijahlewis.dev",
   },
-  education: [
-    {
-      school: "University of Virginia",
-      degree:
-        "Bachelor's Degree in Computer Science (Awarded High Distinctions)",
-      // start: "2014",
-      end: "2019",
-    },
-  ],
   work: [
     {
       company: "First Round Capital",
+      context: "top-tier seed-stage VC — Uber, Notion, Roblox",
       link: "https://firstround.com/",
-      badges: ["New York, NY"],
+      location: "New York City",
       title: "Software Engineer",
       start: "Oct 2024",
       end: "Present",
-      skills: [
-        "PostgreSQL",
-        "Supabase",
-        "Typescript",
-        "NuxtJs",
-        "VueJs",
-        "Django",
-        "Python",
-        "AWS",
-        "SST",
-        "Tailwind",
-        "CSS",
+      bullets: [
+        "One of two engineers firm-wide, owning end-to-end design, data, infra, and vendor decisions for the firm's internal product platform; shadow partners during live deal flow meetings to inform product decisions.",
+        'Co-shipped "At A Glance," the firm\'s daily-driver deal review tool used by every partner, chief of staff, and investor; described internally as mission-critical and credited with helping the firm review a record-high 10,000+ investment opportunities in a single year.',
+        'Co-designed and built "First Source," scanning the open web and third-party APIs (Harmonic, Twitter, etc.) to surface emerging startups; aggregates 200+ AI-enriched signals weekly for structured human review.',
+        "Proposed and led adoption of the firm's modern engineering stack for all new systems.",
+        "Pioneered AI-first development: first to adopt Claude Code, developed approaches for grounding it in the firm's business context, shipped 100% AI-coded PRs, and established patterns adopted by the team.",
       ],
-      description:
-        "As a Software Engineer at First Round Capital, I am building tools for the investment team to streamline their workflow and enhance productivity. My focus is on creating user-friendly interfaces and robust backend systems that support the team's investment strategies and decision-making processes.",
+      skills: ["TypeScript", "AWS serverless", "Postgres", "Supabase"],
+    },
+    {
+      company: "Inner File Software",
+      context: "human rights investigations",
+      location: "Remote",
+      title: "Human Rights Volunteer Software Engineer",
+      start: "Jan 2024",
+      end: "Present",
+      bullets: [
+        "Built a public-facing data visualization (museum exhibit, viral on Reddit/TikTok) and internal research tooling that doubled investigator throughput; work has been cited in major human rights reports supporting advocacy and international accountability.",
+      ],
+    },
+    {
+      company: "Codestache LLC",
+      context: "personal umbrella for independent products and prototyping",
+      location: "Remote",
+      title: "Founder",
+      start: "Sep 2022",
+      end: "Present",
+      bullets: [
+        "Launched Modal (usemodal.com), a productivity SaaS featured on Product Hunt, and Bookish, an AI semantic search engine over 9,000+ books using vector databases, HuggingFace, and LangChain — shipped before semantic search hit the mainstream.",
+      ],
+      skills: ["Vector databases", "HuggingFace", "LangChain"],
     },
     {
       company: "4RL",
+      context: "early-stage social startup combating the loneliness epidemic",
       link: "https://www.4rlapp.com/",
-      badges: ["Washington DC"],
-      title: "Technical Cofounder",
+      location: "Washington, D.C.",
+      title: "Founding Engineer",
       start: "Apr 2024",
-      end: "Jun 2024",
-      skills: [
-        "PostgreSQL",
-        "Supabase",
-        "Typescript",
-        "NextJs",
-        "Astro",
-        "React",
-        "AWS",
-        "SST",
-        "Tailwind",
-        "CSS",
-        "Figma",
+      end: "Oct 2024",
+      bullets: [
+        "Shipped the initial beta app and marketing site; drove early validation with 300+ in-person connections logged in the beta database; partnered with the founder on accelerator applications.",
       ],
-      description:
-        "As the Technical Cofounder of 4RL, I lead the development of solutions to combat the loneliness epidemic by fostering meaningful in-person connections. Through rapid prototyping and user testing, we validated product-market fit, facilitating 300+ in-person connections through our app. By collaborating with local government leaders and business owners, we are enhancing foot traffic to local establishments and community spaces. In addition to driving technical development, I manage fundraising, sales, and operations, ensuring the overall growth and success of this early-stage startup",
-    },
-    {
-      company: "Codestache",
-      link: "https://www.codestache.com/",
-      badges: ["Remote"],
-      title: "Software Engineering Consultant",
-      start: "Sep 2022",
-      end: "Apr 2024",
-      skills: [
-        "MySQL",
-        "Typescript",
-        "Python",
-        "NextJs",
-        "React",
-        "React Native",
-        "Electron",
-        "AWS",
-        "SST",
-        "tRPC",
-        "Tailwind",
-        "CSS",
-        "Figma",
-      ],
-      description:
-        "I founded Code Stache to help emerging startups quickly prototype MVPs and turn ideas into viable products. I led the end-to-end development process, ensuring alignment between business objectives and technical execution. One of the products, Modal, a productivity SaaS application, gained significant traction and was featured on Product Hunt",
+      skills: ["Next.js", "TypeScript", "AWS", "Supabase"],
     },
     {
       company: "Epic",
+      context: "Care Everywhere — healthcare interoperability platform",
       link: "https://www.epic.com/",
-      badges: ["Madison, WI"],
-      title: "Software Engineer Team Lead",
+      location: "Madison, WI",
+      title: "Software Engineering Manager (R&D Team Lead)",
       start: "Sep 2019",
       end: "Jul 2022",
-      skills: [
-        "Javascript",
-        "Typescript",
-        "React",
-        "C#",
-        "M",
-        "CSS",
-        "Sass/Scss",
-        "Balsamiq",
+      bullets: [
+        "Promoted to Medium Team Lead within one year of becoming an IC; managed 5 direct reports as one of two team leads in Care Everywhere's Results division (labs and imaging, ~50 people), setting roadmap and coordinating across adjacent teams.",
+        'Drove rollout of "Aura," one of the largest projects in Care Everywhere and still referenced in Epic staff meetings; contributed directly to sales proposals for early customers who became paying customers; represented the platform in sales calls and on-site hospital visits.',
+        "Previously as IC, contributed to scaling patient record exchange to 250M+ records/month as part of the legacy migration to React and C#; led UI modernization for clinical training that became Epic's top-performing educational tool of the year by views.",
       ],
-      description:
-        "At Epic, I built and led a team responsible for scaling a new healthcare application, which contributed to significant new sales and customer acquisition. I mentored engineers and managed staff. Before becoming a manager, I played a crucial role in migrating the legacy codebase to a web-based stack using React, scaling patient records exchanges to over 250 million per month",
+      skills: ["React", "C#"],
     },
     {
-      company: "UVA",
+      company: "University of Virginia",
+      context: "Teachman Lab / Barnes Lab, Dept. of Psychology",
       link: "https://www.mindtrails.virginia.edu/",
-      badges: ["Charlottesville, VA"],
+      location: "Charlottesville, VA",
       title: "Machine Learning Researcher",
       start: "Aug 2018",
+      end: "Jun 2024",
+      bullets: [
+        "Built ML models (random forest, logistic regression) for predicting early dropout from web-based cognitive bias interventions for anxiety; F1 ~0.92 across ~1,200 participants.",
+        "Co-authored two peer-reviewed publications: Baee et al., JMIR Mental Health (2024); Eberle et al., Journal of Consulting and Clinical Psychology (APA, 2024). Presented at ABCT 2024.",
+      ],
+      skills: [
+        "Python",
+        "scikit-learn",
+        "Random forest",
+        "Logistic regression",
+      ],
+    },
+  ] satisfies WorkItem[],
+  education: [
+    {
+      school: "University of Virginia",
+      degree: "B.A. in Computer Science — awarded High Distinctions",
+      location: "Charlottesville, VA",
+      start: "Aug 2014",
       end: "May 2019",
-      skills: ["Python", "NumPy", "Pandas", "scikit-learn", "SQL"],
-      description:
-        "As a Machine Learning Researcher at the University of Virginia, I created a model to identify high-risk anxiety patients in a clinical psychology program. This model was implemented for over 1000 participants. My ongoing work in a part-time/on-demand capacity led to co-authorship on a paper accepted by the Journal of Medical Internet Research (Jun 2024) and inclusion in the upcoming ABCT Symposium (Nov 2024)",
     },
-    {
-      company: "Epic",
-      link: "https://www.epic.com/",
-      badges: ["Madison, WI"],
-      title: "Software Engineer Intern",
-      start: "May 2018",
-      end: "Aug 2018",
-      skills: ["Javascript", "C#", "MSSQL"],
-      description:
-        "During my internship at Epic, I developed a data visualization tool that enabled detailed analysis of social determinants of health for researchers. This tool facilitated a better understanding of patient backgrounds and improved healthcare delivery. My work involved creating a star-schema data model and an ETL process using MSSQL and the M language, with visualization done using JavaScript",
-    },
-  ],
-  projects: [
-    {
-      title: "Digital Icebreaker",
-      techStack: [
-        "Nextjs",
-        "Tailwind",
-        "SQL",
-        "Supabase",
-        "AWS (SST)",
-        "Drizzle",
-      ],
-      description:
-        "An early prototype for 4RL that could be used in person for events, conferences, and meetups.",
-      link: "https://beta.4rlapp.com/",
-    },
-    {
-      title: "Attrition Prediction to Reduce Anxious Thinking",
-      techStack: ["python", "scikit-learn", "pandas", "NumPy"],
-      description:
-        "Designed an ML algorithm to identify at-risk anxiety patients needing psychiatric intervention for a UVA psychology research program",
-      link: "https://mental.jmir.org/2024/1/e51567",
-    },
-    {
-      title: "Modal",
-      techStack: [
-        "AWS (SST)",
-        "NextJS",
-        "Drizzle",
-        "MySQL",
-        "PlanetScale",
-        "tRPC",
-        "Tailwindcss",
-        "Stripe",
-      ],
-      description:
-        "My first SaaS app. I never found a great productivity manager, so I built an opinionated one. Modal was designed with simplicity for the everyday user. Featured on Product Hunt",
-      link: "https://usemodal.com/",
-    },
-    {
-      title: "IoT Search Engine",
-      techStack: ["SQL", "Angular", "Express"],
-      description:
-        "Built for the campus maintenance team at my university. The search engine allowed workers to search sensor data from IoT devices to monitor things like temperature and CO2.",
-      link: "https://docs.google.com/presentation/d/e/2PACX-1vRaaSJg944iaiN75v8j0G9C7yWL0QFn8OMvCcW_Gm3mjOELJnyPz6ZSR9JMdf8hioSI18LeVj2FNruz/pub?start=false&loop=false&delayms=3000#slide=id.g464c87f956_0_902",
-    },
-    {
-      title: "Bookish",
-      techStack: [
-        "Pandas",
-        "Supabase",
-        "pgvector",
-        "LangChain",
-        "NextJS",
-        "Tailwindcss",
-        "Drizzle",
-      ],
-      description:
-        "Bookish is a semantic search engine that finds books based on the semantic meaning of your query. Typical AI apps make LLMs the UI, but I was interested in other ways of using LLMs to personalize content.",
-      link: "https://github.com/third-systems/book-search",
-    },
-    {
-      title: "Dex",
-      techStack: ["SoldJS", "Go", "Tailwindcss", "AWS (SST)"],
-      description:
-        "Personal contacts manager to keep track of networking connections",
-      link: "https://github.com/itsRoze/dex",
-    },
-    {
-      title: "Immigration Data Visualization",
-      techStack: ["Javascript", "D3"],
-      description: "Analyzed how US immigration has changed over the years",
-      link: "https://immigration-viz.surge.sh/",
-    },
-  ],
+  ] satisfies EducationItem[],
+  skills: {
+    "AI / LLM": [
+      "Claude Code",
+      "Codex",
+      "MCP",
+      "Parallel",
+      "OpenAI",
+      "RAG",
+      "Agentic workflows",
+      "Prompt engineering",
+    ],
+    Languages: ["TypeScript", "Python", "JavaScript", "SQL", "C#"],
+    "Systems & Tools": [
+      "AWS",
+      "Postgres",
+      "Supabase",
+      "pgVector",
+      "React",
+      "Next.js",
+      "Tailwind",
+      "Docker",
+      "GitHub Actions",
+    ],
+  },
 } as const;

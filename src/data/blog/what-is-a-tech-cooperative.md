@@ -4,6 +4,7 @@ excerpt: Learn what a tech cooperative is, how it works, and why it's the next b
 coverImage: /images/blog/cover-what-is-a-tech-cooperative.png
 ogImage: /images/blog/cover-what-is-a-tech-cooperative.png
 date: 2023-04-18
+featured: true
 ---
 
 > The most tragic form of loss isn’t the loss of security; it’s the loss of the capacity to imagine that things could be different.

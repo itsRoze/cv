@@ -3,6 +3,7 @@ title: AI Will Change UI Development
 excerpt: I outline a possibility on how AI can dramatically change how we do frontend development through generative UI
 date: 2024-04-30
 isDraft: false
+featured: true
 ---
 
 Hello reader,

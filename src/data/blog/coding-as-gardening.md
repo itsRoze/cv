@@ -2,6 +2,7 @@
 title: Coding as Gardening — A Journey into SaaS Productivity
 excerpt: Lessons learned from building a SaaS product
 date: 2023-12-12
+featured: true
 ---
 
 I've always been inclined towards finding the best productivity tools that fit my workflows while also spending countless hours watching productivity gurus on YouTube like Thomas Frank, Ali Abdaal, etc. to learn what the best workflows even are. Somedays, I even consider going back to bullet journaling when I miss the creative tactile pleasure of pen to paper. Of course, there are a lot of benefits you miss out on going analog over digital. But, with time I couldn't resonate with the ideas of these productivity YouTubers and didn't love my productivity tools. So, I decided I could build my own digital task manager.
