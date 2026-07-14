@@ -1,16 +1,126 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Title from "../components/Title.astro";
+import Layout from "@layouts/Layout.astro";
+import SectionHeader from "@components/SectionHeader.astro";
+import IndexRow from "@components/IndexRow.astro";
+import WorkCard from "@components/WorkCard.astro";
+import projects from "@data/projects.json";
+import publications from "@data/publications.json";
+import { getPostRows } from "@utils/posts";
+
+const writing = await getPostRows(3, true);
+const work = projects.filter((p) => "featured" in p && p.featured).slice(0, 3);
 ---
 
-<Layout title="elijah lewis">
-  <main class="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4">
-    <Title>Elijah Lewis</Title>
-    <section>
-      <h2 class="font-light">(any/all)</h2>
-      <h2 class="font-light text-3xl mt-8">
-        Engineer, writer, and punk ukulele player based in New York City
-      </h2>
-    </section>
-  </main>
+<Layout
+  title="Elijah Lewis"
+  description="Engineer at First Round Capital, writer, and researcher. Building tools for small, mission-driven teams."
+>
+  {/* HERO */}
+  <section class="relative overflow-hidden border-b-[3px] border-line">
+    <div
+      aria-hidden="true"
+      class="halftone-grain pointer-events-none absolute inset-0 opacity-[0.07]"
+    >
+    </div>
+    <div
+      class="relative mx-auto flex w-full max-w-[1100px] flex-col gap-6 px-6 pt-12 pb-16 md:px-10 md:pt-16 md:pb-20"
+    >
+      <p class="font-mono text-xs tracking-[0.18em] text-muted uppercase">
+        New York City · Software Engineer @ First Round Capital
+      </p>
+      <h1
+        class="font-poster leading-[0.95] uppercase"
+        style="font-size: clamp(3.5rem, 11vw, 6rem);"
+      >
+        Elijah Lewis
+      </h1>
+      <p
+        class="max-w-[42ch] font-sans text-xl leading-snug font-medium md:text-2xl"
+      >
+        Engineer building tools for <span class="text-indigo"
+          >small, mission-driven teams</span
+        >. Writer. Punk ukulele player.
+      </p>
+      <p
+        class="flex flex-wrap gap-x-3 gap-y-1 font-mono text-xs tracking-wide text-muted"
+      >
+        <a class="hover:text-indigo" href="mailto:hello@elijahlewis.dev"
+          >hello@elijahlewis.dev</a
+        >
+        <span class="text-faint">·</span>
+        <a
+          class="hover:text-indigo"
+          href="https://github.com/itsRoze"
+          target="_blank"
+          rel="noopener noreferrer">github/itsRoze</a
+        >
+        <span class="text-faint">·</span>
+        <a
+          class="hover:text-indigo"
+          href="https://www.linkedin.com/in/lewiselijah/"
+          target="_blank"
+          rel="noopener noreferrer">linkedin</a
+        >
+      </p>
+    </div>
+  </section>
+
+  {/* FEATURED WRITING */}
+  <section class="mx-auto w-full max-w-[1100px] px-6 py-16 md:px-10">
+    <SectionHeader title="Featured Writing" caption="[ selected essays ]" />
+    {writing.map((w) => <IndexRow {...w} />)}
+    <a
+      href="/posts"
+      class="mt-6 inline-block font-mono text-xs tracking-wider text-indigo uppercase hover:underline"
+      >all writing →</a
+    >
+  </section>
+
+  {/* FEATURED WORK */}
+  <section
+    class="mx-auto w-full max-w-[1100px] border-t-[3px] border-line px-6 py-16 md:px-10"
+  >
+    <SectionHeader title="Featured Work" caption="[ selected projects ]" />
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+      {
+        work.map((p) => (
+          <WorkCard
+            title={p.title}
+            year={p.year}
+            description={p.description}
+            tags={p.tags}
+            url={"url" in p ? p.url : undefined}
+          />
+        ))
+      }
+    </div>
+    <a
+      href="/projects"
+      class="mt-8 inline-block font-mono text-xs tracking-wider text-indigo uppercase hover:underline"
+      >all work →</a
+    >
+  </section>
+
+  {/* PUBLICATIONS */}
+  <section
+    class="mx-auto w-full max-w-[1100px] border-t-[3px] border-line px-6 py-16 md:px-10"
+  >
+    <SectionHeader title="Publications" caption="[ peer-reviewed ]" />
+    {
+      publications.slice(0, 2).map((pub) => (
+        <IndexRow
+          href={pub.url}
+          title={pub.title}
+          external
+          meta="↗"
+          byline={{ journal: pub.journal, year: pub.year }}
+        />
+      ))
+    }
+    <a
+      href="/publications"
+      class="mt-6 inline-block font-mono text-xs tracking-wider text-indigo uppercase hover:underline"
+      >all publications →</a
+    >
+  </section>
 </Layout>

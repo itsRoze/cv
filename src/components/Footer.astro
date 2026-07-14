@@ -1,0 +1,45 @@
+---
+const year = new Date().getFullYear();
+
+const links = [
+  { label: "hello@elijahlewis.dev", href: "mailto:hello@elijahlewis.dev" },
+  { label: "github ↗", href: "https://github.com/itsRoze", external: true },
+  {
+    label: "linkedin ↗",
+    href: "https://www.linkedin.com/in/lewiselijah/",
+    external: true,
+  },
+  { label: "rss", href: "/rss.xml" },
+];
+---
+
+<footer class="mt-24 border-t-[3px] border-line print:hidden">
+  <div
+    class="mx-auto flex w-full max-w-[1100px] flex-col gap-6 px-6 py-12 md:flex-row md:items-end md:justify-between md:px-10"
+  >
+    <ul
+      class="flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs uppercase tracking-wider"
+    >
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noopener noreferrer" : undefined}
+              class="text-muted transition-colors hover:text-indigo"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div
+      class="flex flex-col gap-1 font-mono text-xs uppercase tracking-wider text-faint"
+    >
+      <span>© {year} Elijah Lewis</span>
+    </div>
+  </div>
+</footer>

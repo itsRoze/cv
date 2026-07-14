@@ -2,13 +2,14 @@
 title: Coding as Gardening — A Journey into SaaS Productivity
 excerpt: Lessons learned from building a SaaS product
 date: 2023-12-12
+featured: true
 ---
 
 I've always been inclined towards finding the best productivity tools that fit my workflows while also spending countless hours watching productivity gurus on YouTube like Thomas Frank, Ali Abdaal, etc. to learn what the best workflows even are. Somedays, I even consider going back to bullet journaling when I miss the creative tactile pleasure of pen to paper. Of course, there are a lot of benefits you miss out on going analog over digital. But, with time I couldn't resonate with the ideas of these productivity YouTubers and didn't love my productivity tools. So, I decided I could build my own digital task manager.
 
 ## Planting the Seeds: Building Modal
 
-Wanting to build my own task manager also came at a time of wanting to build my own startup. _So_, I thought, _why not make this my first SaaS startup?_ Enter [Modal](https://usemodal.com/), a SaaS productivity app designed to follow the Priority Matrix method while incorporating features from other beloved task apps like Things and Notion.
+Wanting to build my own task manager also came at a time of wanting to build my own startup. _So_, I thought, _why not make this my first SaaS startup?_ Enter [Modal](https://github.com/itsRoze/modal), a SaaS productivity app designed to follow the Priority Matrix method while incorporating features from other beloved task apps like Things and Notion.
 
 Inspired by Herman's words in [My Product is my Garden](https://herman.bearblog.dev/my-product-is-my-garden/), Modal — my newly named task manager app — would be my garden. I would tend to it routinely with care, nurturing it with precision, waiting to bear witness to the fruits it could produce.
 

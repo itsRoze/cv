@@ -1,0 +1,65 @@
+---
+/**
+ * An editorial index row: bold title + optional byline/excerpt, with
+ * right-aligned monospace metadata (year + detail). Hover shifts the title to
+ * indigo and nudges the row right (motion suppressed under
+ * prefers-reduced-motion). The optional byline renders a mono uppercase line
+ * under the title with the journal name as the sole marigold accent (per
+ * DESIGN.md: marigold is for journal names, not whole metadata lines).
+ */
+interface Props {
+  href: string;
+  title: string;
+  excerpt?: string;
+  year?: string | number;
+  meta?: string;
+  external?: boolean;
+  byline?: {
+    authors?: string;
+    journal: string;
+    year: string | number;
+  };
+}
+
+const {
+  href,
+  title,
+  excerpt,
+  year,
+  meta,
+  external = false,
+  byline,
+} = Astro.props;
+---
+
+<a
+  href={href}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}
+  class="group grid grid-cols-[1fr_auto] items-baseline gap-5 border-b border-line py-4 transition-[padding] hover:pl-3"
+>
+  <div>
+    <div
+      class="font-sans text-lg font-extrabold uppercase transition-colors group-hover:text-indigo md:text-xl"
+    >
+      {title}
+    </div>
+    {
+      byline && (
+        <p class="mt-1 font-mono text-xs tracking-wide text-faint uppercase">
+          {byline.authors && <>{byline.authors} · </>}
+          <span class="text-marigold">{byline.journal}</span> · {byline.year}
+        </p>
+      )
+    }
+    {excerpt && <p class="mt-1 max-w-[54ch] text-sm text-muted">{excerpt}</p>}
+  </div>
+  {
+    (year || meta) && (
+      <div class="text-right font-mono text-xs whitespace-nowrap text-faint">
+        {year && <span class="block font-bold text-indigo">{year}</span>}
+        {meta}
+      </div>
+    )
+  }
+</a>

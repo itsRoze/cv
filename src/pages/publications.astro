@@ -1,0 +1,31 @@
+---
+import Layout from "@layouts/Layout.astro";
+import SectionHeader from "@components/SectionHeader.astro";
+import IndexRow from "@components/IndexRow.astro";
+import publications from "@data/publications.json";
+---
+
+<Layout
+  title="Publications — Elijah Lewis"
+  description="Peer-reviewed research co-authored by Elijah Lewis."
+>
+  <section class="mx-auto w-full max-w-[1100px] px-6 py-14 md:px-10">
+    <SectionHeader
+      as="h1"
+      title="Publications"
+      caption={`[ ${publications.length} works ]`}
+    />
+    {
+      publications.map((pub) => (
+        <IndexRow
+          href={pub.url}
+          title={pub.title}
+          excerpt={pub.description}
+          external
+          meta="↗"
+          byline={{ authors: pub.authors, journal: pub.journal, year: pub.year }}
+        />
+      ))
+    }
+  </section>
+</Layout>

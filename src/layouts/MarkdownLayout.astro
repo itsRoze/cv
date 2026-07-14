@@ -9,34 +9,43 @@ interface Props {
   minutesRead: string;
 }
 const { title, excerpt, ogImage, date, minutesRead } = Astro.props;
+
+const formattedDate = new Date(date).toLocaleDateString("en-us", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+  timeZone: "UTC",
+});
 ---
 
 <Layout
-  title={title}
+  title={`${title} — Elijah Lewis`}
   description={excerpt}
   image={ogImage}
   type="article"
   date={date}
 >
-  <main class="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-4">
-    <h1 class="text-3xl font-bold pb-4">
+  <article class="mx-auto w-full max-w-[720px] px-6 py-14 md:px-8">
+    <div
+      class="mb-5 flex flex-wrap gap-4 font-mono text-xs tracking-wide text-muted uppercase"
+    >
+      <span class="font-bold text-indigo">{formattedDate}</span>
+      <span>{minutesRead}</span>
+      <span>Essay</span>
+    </div>
+
+    <h1 class="mb-8 font-poster text-4xl leading-[0.95] uppercase md:text-6xl">
       {title}
     </h1>
-    <div class="space-x-4 text-sm font-medium">
-      <time
-        >🗓️ {
-          new Date(date).toLocaleDateString("en-us", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-          })
-        }</time
-      ><span>⏳ {minutesRead}</span>
-    </div>
-    <article
-      class="prose prose-h1:text-2xl max-w-screen-md px-0 lg:mt-8 mt-4 markdown"
+
+    <div
+      class="markdown prose prose-lg max-w-none font-sans
+        prose-headings:font-poster prose-headings:uppercase prose-headings:tracking-tight prose-headings:text-ink
+        prose-a:text-indigo prose-a:font-medium prose-a:underline-offset-2
+        prose-blockquote:border-l-4 prose-blockquote:border-indigo prose-blockquote:not-italic prose-blockquote:text-muted
+        prose-strong:text-ink prose-code:text-indigo"
     >
       <slot />
-    </article>
-  </main>
+    </div>
+  </article>
 </Layout>
