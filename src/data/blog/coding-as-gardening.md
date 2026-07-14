@@ -9,7 +9,7 @@ I've always been inclined towards finding the best productivity tools that fit m
 
 ## Planting the Seeds: Building Modal
 
-Wanting to build my own task manager also came at a time of wanting to build my own startup. _So_, I thought, _why not make this my first SaaS startup?_ Enter [Modal](https://usemodal.com/), a SaaS productivity app designed to follow the Priority Matrix method while incorporating features from other beloved task apps like Things and Notion.
+Wanting to build my own task manager also came at a time of wanting to build my own startup. _So_, I thought, _why not make this my first SaaS startup?_ Enter [Modal](https://github.com/itsRoze/modal), a SaaS productivity app designed to follow the Priority Matrix method while incorporating features from other beloved task apps like Things and Notion.
 
 Inspired by Herman's words in [My Product is my Garden](https://herman.bearblog.dev/my-product-is-my-garden/), Modal — my newly named task manager app — would be my garden. I would tend to it routinely with care, nurturing it with precision, waiting to bear witness to the fruits it could produce.
 
