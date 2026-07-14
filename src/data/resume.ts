@@ -28,7 +28,6 @@ export const RESUME = {
     "I'm a product engineer who ships 0→1 tools for small, mission-driven teams, and I lead AI-first, agentic engineering practice (Claude Code, MCP, custom internal tooling). I work full-stack, from healthcare-interoperability legacy systems to modern serverless stacks, and I volunteer in civic tech, where my work is cited in human rights reports.",
   contact: {
     email: "hello@elijahlewis.dev",
-    tel: "703-554-7193",
     linkedin: "https://www.linkedin.com/in/lewiselijah/",
     github: "https://github.com/itsRoze",
     website: "https://elijahlewis.dev",

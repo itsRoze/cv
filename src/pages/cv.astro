@@ -7,7 +7,6 @@ const { name, location, summary, contact, work, education, skills } = RESUME;
 
 const contactItems = [
   { label: contact.email, href: `mailto:${contact.email}` },
-  { label: contact.tel, href: `tel:${contact.tel.replace(/[^0-9+]/g, "")}` },
   { label: "linkedin", href: contact.linkedin, external: true },
   { label: "github", href: contact.github, external: true },
   { label: "elijahlewis.dev", href: contact.website, external: true },
