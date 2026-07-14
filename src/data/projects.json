@@ -1,10 +1,11 @@
 [
   {
-    "title": "Human Rights Data Visualization",
-    "description": "Volunteer work with Inner File Software: a public-facing data visualization that was exhibited in a museum and went viral on Reddit and TikTok, plus internal research tooling that doubled investigator throughput. Cited in major human rights reports.",
-    "year": "2024-Present",
+    "title": "Smriti",
+    "description": "My personal Claude Code skill stack — one /begin command takes an idea to a planned, reviewed, and browser-verified change, with a human in the loop at three gates. It powers how I build everything else, including this site.",
+    "year": "2026",
     "featured": true,
-    "tags": ["Data Visualization", "Human Rights", "Museum Exhibit"]
+    "url": "https://github.com/itsRoze/smriti",
+    "tags": ["Claude Code", "AI Agents", "CLI"]
   },
   {
     "title": "Modal",
