@@ -1,5 +1,13 @@
 [
   {
+    "title": "Goblin Foundry",
+    "description": "I built an open-source, local-first issue board for AI agents. It pairs a keyboard-driven board with dependency graphs and a JSON CLI, so agents can plan work while a human decides when it is ready to build.",
+    "year": "2026",
+    "featured": true,
+    "url": "https://github.com/itsRoze/goblin-foundry",
+    "tags": ["AI Agents", "TypeScript", "React", "Bun", "SQLite"]
+  },
+  {
     "title": "YNAB MCP",
     "description": "I built an open-source MCP server that lets Claude and Codex read and update a YNAB budget through conversation. It runs locally or on Cloudflare Workers, with OAuth authentication for private access across devices.",
     "year": "2026",
