@@ -1,5 +1,13 @@
 [
   {
+    "title": "YNAB MCP",
+    "description": "I built an open-source MCP server that lets Claude and Codex read and update a YNAB budget through conversation. It runs locally or on Cloudflare Workers, with OAuth authentication for private access across devices.",
+    "year": "2026",
+    "featured": true,
+    "url": "https://github.com/itsRoze/ynab-mcp",
+    "tags": ["TypeScript", "MCP", "Cloudflare Workers", "OAuth"]
+  },
+  {
     "title": "Smriti",
     "description": "My personal Claude Code skill stack — one /begin command takes an idea to a planned, reviewed, and browser-verified change, with a human in the loop at three gates. It powers how I build everything else, including this site.",
     "year": "2026",
